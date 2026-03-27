@@ -17,7 +17,7 @@ export default function ChatInput({ onSend, disabled }) {
     <form className="chat-input" onSubmit={handleSubmit}>
       <textarea
         className="chat-input__field"
-        placeholder="Ask about admissions, courses, fees, scholarships, accommodation..."
+        placeholder="Nhập tên, điểm IELTS/TOEFL, GPA và ngành học để tìm học bổng phù hợp."
         value={text}
         onChange={(event) => setText(event.target.value)}
         rows={2}

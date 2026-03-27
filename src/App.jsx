@@ -14,7 +14,7 @@ const initialMessages = [
 
 export default function App() {
   const [messages, setMessages] = useState(initialMessages)
-  const [isStreaming, setIsStreaming] = useState(true)
+  const [isStreaming, setIsStreaming] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const historyPayload = useMemo(() => {

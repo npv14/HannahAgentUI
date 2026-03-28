@@ -341,28 +341,73 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding: 16px;
+    padding: 0;
   }
 
-  .app {
-    padding: 20px;
+  #root {
+    width: 100%;
   }
 
+  /* Header: compact row on mobile */
   .app__header {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 10px 16px;
   }
 
+  .app__avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .app__eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .app h1 {
+    font-size: 18px;
+  }
+
+  /* Chat body: tighter padding */
+  .chat-window {
+    padding: 16px 12px;
+  }
+
+  .chat-window__messages {
+    gap: 14px;
+  }
+
+  /* Bubbles: full width on small screens */
   .chat-message__bubble {
-    max-width: 100%;
+    max-width: 90%;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .chat-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Footer: tighter padding, no hint text */
+  .chat-footer {
+    padding: 10px 12px;
+  }
+
+  .chat-footer__hint {
+    display: none;
   }
 
   .chat-input {
-    flex-direction: column;
-    align-items: stretch;
+    padding: 8px 12px;
+    border-radius: 14px;
+  }
+
+  .chat-input__field {
+    font-size: 14px;
   }
 
   .chat-input__button {
-    width: 100%;
+    width: 32px;
+    height: 32px;
   }
 }

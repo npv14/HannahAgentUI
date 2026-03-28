@@ -9,7 +9,7 @@ const initialMessages = [
     id: 'welcome',
     role: 'assistant',
     content:
-      'Xin chào! Mình là trợ lý của Hannah Vu — Global Engagement Manager tại Đại học Tây Úc (UWA), Perth.\n\nMình có thể giúp bạn và phụ huynh tìm hiểu về:\n- Các khóa học & điều kiện đầu vào tại UWA\n- Chương trình liên kết & cơ hội chuyển tiếp\n- Học bổng phù hợp theo trình độ học vấn của bạn\n- Chuẩn bị kỹ năng thực tập & xin việc tại Úc\n- Cuộc sống & hoạt động tại Perth\n- Chỗ ở (accommodation) cho sinh viên quốc tế\n\nSau khi trao đổi, mình có thể giúp bạn lập danh sách việc cần làm (to-do list) và xuất thành file PDF.\n\nBạn muốn bắt đầu từ đâu? Hãy cho mình biết tên, trình độ học vấn hiện tại và mục tiêu của bạn nhé!'
+      'Xin chào! Mình là trợ lý của Hannah Vu\n\nMình có thể giúp bạn và phụ huynh tìm hiểu về:\n- Các khóa học và điều kiện đầu vào tại UWA\n- Chương trình liên kết và cơ hội chuyển tiếp\n- Học bổng phù hợp theo trình độ học vấn của bạn\n- Chuẩn bị kỹ năng thực tập và xin việc tại Úc\n- Cuộc sống và hoạt động tại Perth\n- Chỗ ở cho sinh viên quốc tế\n\nBạn muốn bắt đầu từ đâu? Hãy cho mình biết tên, trình độ học vấn hiện tại và mục tiêu của bạn nhé!'
   }
 ]
 

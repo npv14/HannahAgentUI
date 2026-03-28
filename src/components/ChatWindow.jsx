@@ -6,19 +6,23 @@ export default function ChatWindow({ messages, isLoading }) {
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages])
+  }, [messages, isLoading])
 
   return (
-    <section className="chat-window">
+    <div className="chat-window">
       <div className="chat-window__messages">
         {messages.map((message) => (
           <ChatMessage key={message.id} message={message} />
         ))}
         {isLoading && (
-          <div className="chat-window__status">Thinking with university data...</div>
+          <div className="chat-window__status">
+            <span className="chat-window__dot" />
+            <span className="chat-window__dot" />
+            <span className="chat-window__dot" />
+          </div>
         )}
         <div ref={bottomRef} />
       </div>
-    </section>
+    </div>
   )
 }

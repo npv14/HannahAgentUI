@@ -23,6 +23,7 @@
 
 body {
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: radial-gradient(circle at top left, #fdf8f1 0%, #eef5f2 45%, #e4ecf4 100%);
   display: flex;
@@ -40,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: linear-gradient(135deg, #ffffff 0%, #f8f4ed 100%);
   box-shadow: var(--shadow);

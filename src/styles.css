@@ -314,7 +314,7 @@ body {
 .chat-input {
   display: flex;
   gap: 10px;
-  align-items: flex-end;
+  align-items: center;
   background: #f4f2ed;
   border: 1.5px solid rgba(15, 24, 38, 0.12);
   border-radius: 16px;
@@ -503,7 +503,7 @@ body {
   }
 
   .chat-input__field {
-    font-size: 14px;
+    font-size: 16px; /* prevents iOS auto-zoom on focus */
   }
 
   .chat-input__button {

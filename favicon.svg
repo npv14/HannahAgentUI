@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Transparent background with no rect -->
+  
+  <!-- Letter H in cursive-like style (similar to Pacifico) -->
+  <text x="100" y="150" font-family="'Brush Script MT', 'Lucida Handwriting', cursive" font-size="160" font-style="italic" text-anchor="middle" fill="#1d6b64">H</text>
+</svg>

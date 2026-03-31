@@ -169,18 +169,21 @@ function renderContent(content) {
 
 export default function ChatMessage({ message }) {
   const isUser = message.role === 'user'
+  const hasContent = message.content.trim().length > 0
 
   return (
     <div className={`chat-message ${isUser ? 'chat-message--user' : 'chat-message--assistant'}`}>
       {!isUser && (
         <img src={hannahAvatar} alt="Hannah Vu" className="chat-avatar" />
       )}
-      <div className="chat-message__bubble">
-        {isUser
-          ? <p>{message.content}</p>
-          : renderContent(message.content)
-        }
-      </div>
+      {hasContent && (
+        <div className="chat-message__bubble">
+          {isUser
+            ? <p>{message.content}</p>
+            : renderContent(message.content)
+          }
+        </div>
+      )}
     </div>
   )
 }

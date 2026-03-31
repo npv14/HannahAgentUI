@@ -508,6 +508,6 @@ body {
 
   .chat-input__button {
     width: 32px;
-    height: 32px;
+    height: 32px; /* larger tap target on mobile */
   }
 }

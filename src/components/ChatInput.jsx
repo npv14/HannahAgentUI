@@ -28,7 +28,7 @@ export default function ChatInput({ onSend, disabled }) {
       <form className="chat-input" onSubmit={handleSubmit}>
         <textarea
           className="chat-input__field"
-          placeholder="Nhập tên, điểm IELTS/TOEFL, GPA và ngành học để tìm học bổng phù hợp."
+          placeholder="Hỏi Hannah về khóa học, học bổng, ký túc xá, thực tập và cuộc sống tại Perth..."
           value={text}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
@@ -39,7 +39,6 @@ export default function ChatInput({ onSend, disabled }) {
           <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
         </button>
       </form>
-      <p className="chat-footer__hint">Enter để gửi · Shift+Enter xuống dòng</p>
     </footer>
   )
 }

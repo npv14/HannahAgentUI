@@ -35,13 +35,9 @@ export default function App() {
       content: text.trim()
     }
 
-    const assistantMessage = {
-      id: `assistant-${Date.now()}`,
-      role: 'assistant',
-      content: ''
-    }
+    const assistantMessageId = `assistant-${Date.now()}`
 
-    setMessages((prev) => [...prev, userMessage, assistantMessage])
+    setMessages((prev) => [...prev, userMessage])
     setIsLoading(true)
 
     const requestPayload = {
@@ -52,36 +48,33 @@ export default function App() {
 
     try {
       if (isStreaming) {
+        let content = ''
         await streamMessage(requestPayload, (chunk) => {
-          setMessages((prev) =>
-            prev.map((message) =>
-              message.id === assistantMessage.id
-                ? { ...message, content: message.content + chunk }
-                : message
-            )
-          )
+          content += chunk
+          setMessages((prev) => {
+            const lastMessage = prev[prev.length - 1]
+            if (lastMessage?.id === assistantMessageId) {
+              return prev.map((message) =>
+                message.id === assistantMessageId
+                  ? { ...message, content: content }
+                  : message
+              )
+            } else {
+              return [...prev, { id: assistantMessageId, role: 'assistant', content: content }]
+            }
+          })
         })
       } else {
         const response = await sendMessage(requestPayload)
-        setMessages((prev) =>
-          prev.map((message) =>
-            message.id === assistantMessage.id
-              ? { ...message, content: response.answer }
-              : message
-          )
-        )
+        setMessages((prev) => [...prev, { id: assistantMessageId, role: 'assistant', content: response.answer }])
       }
     } catch (error) {
       setMessages((prev) =>
-        prev.map((message) =>
-          message.id === assistantMessage.id
-            ? {
-                ...message,
-                content:
-                  'Sorry, something went wrong while contacting the university assistant. Please try again.'
-              }
-            : message
-        )
+        [...prev, {
+          id: assistantMessageId,
+          role: 'assistant',
+          content: 'Sorry, something went wrong while contacting the university assistant. Please try again.'
+        }]
       )
     } finally {
       setIsLoading(false)
